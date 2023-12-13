@@ -5,7 +5,20 @@
 */
 
 function isAnagram(str1, str2) {
+  // Remove spaces and convert to lowercase to make the comparison case-insensitive
+  const cleanStr1 = str1.replace(/\s/g, '').toLowerCase();
+  const cleanStr2 = str2.replace(/\s/g, '').toLowerCase();
 
+  // Sort the characters in the strings
+  const sortedStr1 = cleanStr1.split('').sort().join('');
+  const sortedStr2 = cleanStr2.split('').sort().join('');
+
+  // Compare the sorted strings
+  if(sortedStr1 === sortedStr2){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
-
 module.exports = isAnagram;
